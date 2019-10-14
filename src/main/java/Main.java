@@ -35,7 +35,7 @@ public class Main {
 
         final SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
 
-        session.getUser().blockingStream(10).forEach(users -> {
+        session.getUser().blockingStream().forEach(users -> {
             users.getUsers().forEach(user -> {
                 final Account acc = user.blockingConnectAsUser().getAccount().blockingGet();
 
